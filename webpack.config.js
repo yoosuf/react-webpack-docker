@@ -85,6 +85,24 @@ module.exports = (_, argv) => {
           test: /\.css$/i,
           use: ["style-loader", "css-loader"],
         },
+        {
+          test: /\.(png|jpe?g|gif|svg)$/i,
+          use: [
+            {
+              loader: 'file-loader',
+            },
+            {
+              loader: 'image-webpack-loader',
+              options: {
+                mozjpeg: { progressive: true },
+                optipng: { enabled: true },
+                pngquant: { quality: [0.65, 0.90], speed: 4 },
+                gifsicle: { interlaced: false },
+                webp: { quality: 75 }
+              }
+            }
+          ]
+        },
       ],
     },
     optimization: {
