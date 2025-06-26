@@ -1,0 +1,14 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: ${BUILD_MODE:-dev}
+    ports:
+      - "3000:80"      # production
+      - "5173:5173"    # development
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=${NODE_ENV:-development}
