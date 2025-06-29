@@ -1,6 +1,9 @@
 import React from 'react';
-import './hero.css'; // optional if you want to keep styles separate
+import './hero.css';
 
+/**
+ * Hero section component.
+ */
 const Hero = () => {
   return (
     <section className="hero">

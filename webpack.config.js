@@ -47,7 +47,7 @@ module.exports = (_, argv) => {
 
   return {
     entry: {
-      main: "./src/index.jsx",
+      main: "./src/index.tsx",
     },
     output: {
       path: path.resolve(__dirname, "build"),
@@ -56,7 +56,7 @@ module.exports = (_, argv) => {
       clean: true,
     },
     resolve: {
-      extensions: [".js", ".jsx"],
+      extensions: [".js", ".jsx", ".ts", ".tsx"],
     },
     devtool: isProd ? false : "eval-source-map",
     devServer: {
@@ -77,7 +77,7 @@ module.exports = (_, argv) => {
     module: {
       rules: [
         {
-          test: /\.(js|jsx)$/,
+          test: /\.(js|jsx|ts|tsx)$/,
           use: "babel-loader",
           exclude: /node_modules/,
         },

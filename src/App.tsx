@@ -1,13 +1,11 @@
 import React from "react";
-import Hero from "./components/Hero.jsx";
+import Hero from "./components/Hero";
 
 /**
  * The main application component.
  * This is a functional component that serves as the root of the React application.
- *
- * @returns {JSX.Element} The JSX representation of the App component.
  */
-function App() {
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -24,6 +22,6 @@ function App() {
       </footer>
     </div>
   );
-}
+};
 
 export default App;
